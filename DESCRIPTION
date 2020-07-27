@@ -1,0 +1,24 @@
+Package: enhancedView
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tim",
+           family = "Holzapfel",
+           role = c("aut", "cre"),
+           email = "TimHolzapfel@outlook.com")
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+URL: https://github.com/Tim-Lukas-H/enhancedView
+BugReports: https://github.com/Tim-Lukas-H/enhancedView/issues
+Depends: 
+    R (>= 4.0.0)
+Imports: 
+    data.table,
+    DT,
+    shiny,
+    shinythemes
