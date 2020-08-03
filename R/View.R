@@ -43,13 +43,8 @@ View <- function(
         dplyr::select(-any_of(names_select))
     }
 
-    requireNamespace("shiny")
-    requireNamespace("shinythemes")
-
-    # conflicted::conflict_prefer("renderDT", "DT", quiet = TRUE)
-    # conflicted::conflict_prefer("dataTableOutput", "DT", quiet = TRUE)
-    # conflicted::conflict_prefer("renderDataTable", "DT", quiet = TRUE)
-    # conflicted::conflict_prefer("DTOutput", "DT", quiet = TRUE)
+    requireNamespace("shiny", quietly = TRUE)
+    requireNamespace("shinythemes", quietly = TRUE)
 
     data.table::setDTthreads(6)
 
@@ -62,8 +57,7 @@ View <- function(
       output$mytable <- DT::renderDT({
         DT::datatable(
           file,
-          style = "bootstrap",
-          extensions = c("FixedHeader", "Buttons"),
+          extensions = c("FixedHeader"),
           options = list(
             columnDefs = list(
               list(
@@ -71,12 +65,13 @@ View <- function(
                 targets = "_all"
               )
             ),
-            pageLength = 200,
+            pageLength = getOption(
+              "enhancedView.pageLength",
+              default = 200
+            ),
             lengthMenu = c(5, 20, 50, 100, 200, 1000),
             fixedHeader = TRUE,
             autoWidth = TRUE,
-            dom = "Bfrtip",
-            buttons = I("colvis"),
             language = list(search = "Filter:")
           )
         )
@@ -87,3 +82,6 @@ View <- function(
     tibble::view(file)
   }
 }
+
+
+# style = "bootstrap"
