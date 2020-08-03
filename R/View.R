@@ -4,20 +4,52 @@
 #'   limited capability to expand the columns.
 #'
 #' @param file File to be viewed
-#'
-#' @import shiny
-#' @import shinythemes
+#' @param dev_mode Drop variables that are not relevant in most situations
+#' @param standard_view Disables the enhanced view mode.
 #'
 #' @export
 #'
-View <- function(file, dev_mode = TRUE) {
-  if (any(class(file) %in% "list")) {
-    tibble::view(file)
-  } else {
+View <- function(
+                 file,
+                 dev_mode = getOption(
+                   "enhancedView.dev_mode",
+                   default = FALSE
+                 ),
+                 standard_view = getOption(
+                   "enhancedView.standard_view",
+                   default = FALSE
+                 )) {
+
+  # Only invoke the enhanced data viewer when the data of interest is a
+  # data.frame
+
+  if (any(class(file) %in% "data.frame") & standard_view == FALSE) {
+
+    # Drop some variables that are only relevant in a development context
+    # and are otherwise just cluttering the viewer.
+
+    if (dev_mode == FALSE) {
+      requireNamespace("dplyr")
+
+      names <- getOption(
+        "enhancedView.names",
+        default = NULL
+      )
+
+      names_select <- names[which(names %in% names(file))]
+
+      file <-
+        file %>%
+        dplyr::select(-any_of(names_select))
+    }
+
     requireNamespace("shiny")
-    requireNamespace("data.table")
-    requireNamespace("DT")
     requireNamespace("shinythemes")
+
+    # conflicted::conflict_prefer("renderDT", "DT", quiet = TRUE)
+    # conflicted::conflict_prefer("dataTableOutput", "DT", quiet = TRUE)
+    # conflicted::conflict_prefer("renderDataTable", "DT", quiet = TRUE)
+    # conflicted::conflict_prefer("DTOutput", "DT", quiet = TRUE)
 
     data.table::setDTthreads(6)
 
@@ -51,5 +83,7 @@ View <- function(file, dev_mode = TRUE) {
       })
     }
     shiny::shinyApp(ui, server)
+  } else {
+    tibble::view(file)
   }
 }

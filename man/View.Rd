@@ -4,10 +4,18 @@
 \alias{View}
 \title{Enhanced Data Viewer}
 \usage{
-View(file, dev_mode = TRUE)
+View(
+  file,
+  dev_mode = getOption("enhancedView.dev_mode", default = FALSE),
+  standard_view = getOption("enhancedView.standard_view", default = FALSE)
+)
 }
 \arguments{
 \item{file}{File to be viewed}
+
+\item{dev_mode}{Drop variables that are not relevant in most situations}
+
+\item{standard_view}{Disables the enhanced view mode.}
 }
 \description{
 One of the biggest problems of the built-in data viewer is its
