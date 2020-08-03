@@ -10,38 +10,46 @@
 #'
 #' @export
 #'
-View <- function(file) {
-  requireNamespace("shiny")
-  requireNamespace("data.table")
-  requireNamespace("DT")
-  requireNamespace("shinythemes")
+View <- function(file, dev_mode = TRUE) {
+  if (any(class(file) %in% "list")) {
+    tibble::view(file)
+  } else {
+    requireNamespace("shiny")
+    requireNamespace("data.table")
+    requireNamespace("DT")
+    requireNamespace("shinythemes")
 
-  data.table::setDTthreads(8)
+    data.table::setDTthreads(6)
 
-  ui <- shiny::fluidPage(
-    theme = shinythemes::shinytheme("flatly"),
-    DT::DTOutput("mytable")
-  )
+    ui <- shiny::fluidPage(
+      theme = shinythemes::shinytheme("flatly"),
+      DT::DTOutput("mytable")
+    )
 
-  server <- function(input, output) {
-    output$mytable <- DT::renderDT({
-      DT::datatable(
-        file,
-        style = "bootstrap",
-        options = list(
-          columnDefs = list(
-            list(
-              className = "dt-center",
-              targets = "_all"
-            )
-          ),
-          pageLength = 200,
-          lengthMenu = c(5, 20, 50, 100, 200, 1000),
-          autoWidth = TRUE,
-          language = list(search = "Filter:")
+    server <- function(input, output) {
+      output$mytable <- DT::renderDT({
+        DT::datatable(
+          file,
+          style = "bootstrap",
+          extensions = c("FixedHeader", "Buttons"),
+          options = list(
+            columnDefs = list(
+              list(
+                className = "dt-center",
+                targets = "_all"
+              )
+            ),
+            pageLength = 200,
+            lengthMenu = c(5, 20, 50, 100, 200, 1000),
+            fixedHeader = TRUE,
+            autoWidth = TRUE,
+            dom = "Bfrtip",
+            buttons = I("colvis"),
+            language = list(search = "Filter:")
+          )
         )
-      )
-    })
+      })
+    }
+    shiny::shinyApp(ui, server)
   }
-  shiny::shinyApp(ui, server)
 }

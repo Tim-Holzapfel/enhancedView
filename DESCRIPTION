@@ -21,4 +21,5 @@ Imports:
     data.table,
     DT,
     shiny,
-    shinythemes
+    shinythemes,
+    tibble

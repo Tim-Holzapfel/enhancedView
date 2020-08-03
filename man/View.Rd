@@ -4,7 +4,7 @@
 \alias{View}
 \title{Enhanced Data Viewer}
 \usage{
-View(file)
+View(file, dev_mode = TRUE)
 }
 \arguments{
 \item{file}{File to be viewed}
