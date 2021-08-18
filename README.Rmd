@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # enhancedView
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/Tim-Lukas-H/enhancedView/workflows/R-CMD-check/badge.svg)](https://github.com/Tim-Lukas-H/enhancedView/actions)
 <!-- badges: end -->
 
 The goal of enhancedView is to ...
