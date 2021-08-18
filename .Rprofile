@@ -1,6 +1,4 @@
 
-
-
 if (interactive()) {
   suppressMessages({
     require(devtools)
@@ -34,3 +32,6 @@ if (interactive()) {
 
   rm(list = "deps")
 }
+
+
+

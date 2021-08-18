@@ -7,7 +7,8 @@
 View(
   file,
   dev_mode = getOption("enhancedView.dev_mode", default = FALSE),
-  standard_view = getOption("enhancedView.standard_view", default = FALSE)
+  standard_view = getOption("enhancedView.standard_view", default = FALSE),
+  pageLength_default = getOption("enhancedView.pageLength", default = 200)
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ View(
 \item{dev_mode}{Drop variables that are not relevant in most situations}
 
 \item{standard_view}{Disables the enhanced view mode.}
+
+\item{pageLength_default}{default page length.}
 }
 \description{
 One of the biggest problems of the built-in data viewer is its

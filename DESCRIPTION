@@ -18,9 +18,14 @@ BugReports: https://github.com/Tim-Lukas-H/enhancedView/issues
 Depends: 
     R (>= 4.0.0)
 Imports: 
+    ggplot2,
+    hexSticker,
+    magick,
+    magrittr,
+    png,
+    tibble,
     data.table,
     dplyr,
     DT,
     shiny,
-    shinythemes,
-    tibble
+    shinythemes
