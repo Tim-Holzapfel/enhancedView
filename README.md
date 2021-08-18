@@ -1,9 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# enhancedView <img src='man/figures/logo.png' align="right" height="139" />
+# enhancedView
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Tim-Lukas-H/enhancedView/workflows/R-CMD-check/badge.svg)](https://github.com/Tim-Lukas-H/enhancedView/actions)
 <!-- badges: end -->
 
 The goal of enhancedView is to …

@@ -1,7 +1,6 @@
 .Rproj.user
 .Rhistory
 .RData
-.Rprofile
 R/gen_package_logo.R
 inst/
 develop_part/
