@@ -5,3 +5,4 @@
 ^develop_part/.*$
 ^README\.Rmd$
 ^\.github$
+^.Rprofile$

@@ -42,6 +42,3 @@ if (interactive()) {
 
   rm(list = "deps")
 }
-
-
-
