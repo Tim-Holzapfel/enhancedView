@@ -1,5 +1,6 @@
 ^enhancedView\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
-^R/gen_package_logo\.R$
+^data_raw/.*$
+^develop_part/.*$
 ^README\.Rmd$

@@ -4,6 +4,7 @@ if (interactive()) {
     require(devtools)
     require(usethis)
     require(magrittr)
+    devtools::load_all(".")
   })
 
   invisible(desc::desc_del_deps())
