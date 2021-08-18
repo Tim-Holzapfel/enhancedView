@@ -3,3 +3,4 @@
 .RData
 R/gen_package_logo.R
 inst/
+develop_part/

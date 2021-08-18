@@ -9,6 +9,11 @@
 #' @param pageLength_default default page length.
 #' @export
 #'
+#' @importFrom rlang .data
+#' @importFrom shiny stopApp
+#' @importFrom dplyr any_of
+#'
+#'
 View <- function(file,
                  dev_mode = getOption(
                    "enhancedView.dev_mode",
@@ -44,7 +49,7 @@ View <- function(file,
 
       file <-
         file %>%
-        dplyr::select(-any_of(names_select))
+        dplyr::select(-any_of(.data$names_select))
     }
 
     requireNamespace("shiny", quietly = TRUE)

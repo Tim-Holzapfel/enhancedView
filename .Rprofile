@@ -9,11 +9,20 @@ if (interactive()) {
 
   invisible(desc::desc_del_deps())
 
-  deps <- renv::dependencies(path = "R") %>%
+  deps <- renv::dependencies(path = c("R")) %>%
     dplyr::transmute(
       package = Package,
       type = "Imports",
       version = "*"
+    ) %>%
+    tibble::add_row(
+      package = "testthat", type = "Imports", version = "*"
+    ) %>%
+    tibble::add_row(
+      package = "rlang", type = "Imports", version = "*"
+    ) %>%
+    tibble::add_row(
+      package = "magrittr", type = "Imports", version = "*"
     ) %>%
     tibble::add_row(
       package = "DT", type = "Imports", version = "*"

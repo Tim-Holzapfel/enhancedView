@@ -3,5 +3,5 @@ context("view_compatibility")
 library(testthat)
 
 
-View(test_data)
+#View(test_data)
 
