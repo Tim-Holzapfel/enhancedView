@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^R/gen_package_logo\.R$
+^README\.Rmd$

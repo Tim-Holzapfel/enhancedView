@@ -1,5 +1,6 @@
 # Code to create the package logo
 
+usethis::use_readme_rmd()
 
 #   ____________________________________________________________________________
 #   Libraries                                                               ####
