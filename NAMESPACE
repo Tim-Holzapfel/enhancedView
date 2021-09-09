@@ -2,7 +2,8 @@
 
 export("%>%")
 export(View)
+import(shiny)
 importFrom(dplyr,any_of)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)
-importFrom(shiny,stopApp)
+importFrom(shinythemes,shinytheme)

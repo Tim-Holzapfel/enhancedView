@@ -6,19 +6,19 @@
 \usage{
 View(
   file,
-  dev_mode = getOption("enhancedView.dev_mode", default = FALSE),
-  standard_view = getOption("enhancedView.standard_view", default = FALSE),
-  pageLength_default = getOption("enhancedView.pageLength", default = 200)
+  pageLength_default = getOption("enhancedView.pageLength", default = 200),
+  default_view = getOption("enhancedView.default_view", default = FALSE),
+  theme = getOption("enhancedView.theme", default = "flatly")
 )
 }
 \arguments{
 \item{file}{File to be viewed}
 
-\item{dev_mode}{Drop variables that are not relevant in most situations}
-
-\item{standard_view}{Disables the enhanced view mode.}
-
 \item{pageLength_default}{default page length.}
+
+\item{default_view}{Request the default RStudio data viewer.}
+
+\item{theme}{Drop variables that are not relevant in most situations}
 }
 \description{
 One of the biggest problems of the built-in data viewer is its

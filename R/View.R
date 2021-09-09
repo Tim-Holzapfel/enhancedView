@@ -4,61 +4,57 @@
 #'   limited capability to expand the columns.
 #'
 #' @param file File to be viewed
-#' @param dev_mode Drop variables that are not relevant in most situations
-#' @param standard_view Disables the enhanced view mode.
+#' @param theme Drop variables that are not relevant in most situations
 #' @param pageLength_default default page length.
+#' @param default_view Request the default RStudio data viewer.
 #' @export
 #'
 #' @importFrom rlang .data
-#' @importFrom shiny stopApp
+#' @import shiny
 #' @importFrom dplyr any_of
-#'
-#'
-View <- function(file,
-                 dev_mode = getOption(
-                   "enhancedView.dev_mode",
-                   default = FALSE
-                 ),
-                 standard_view = getOption(
-                   "enhancedView.standard_view",
-                   default = FALSE
-                 ),
-                 pageLength_default = getOption(
-                   "enhancedView.pageLength",
-                   default = 200
-                 )) {
-  requireNamespace("dplyr")
+#' @importFrom shinythemes shinytheme
+View <-
+  function(file,
+           pageLength_default = getOption(
+             "enhancedView.pageLength",
+             default = 200
+           ),
+           default_view = getOption(
+             "enhancedView.default_view",
+             default = FALSE
+           ),
+           theme = getOption(
+             "enhancedView.theme",
+             default = "flatly"
+           )) {
 
-  # Only invoke the enhanced data viewer when the data of interest is a
-  # data.frame
+    `%notin%` <- Negate(`%in%`)
+    none <- Negate(any)
 
-  if (any(class(file) %in% "data.frame") & standard_view == FALSE) {
+    requireNamespace("dplyr")
 
-    # Drop some variables that are only relevant in a development context
-    # and are otherwise just cluttering the viewer.
+    # Only invoke the enhanced data viewer when the data of interest is a
+    # data.frame
 
-    if (dev_mode == FALSE) {
-      requireNamespace("dplyr")
+    withr::with_package("utils", {
+      standardView <- as.environment("package:utils")$View
+    })
 
-      names <- getOption(
-        "enhancedView.names",
-        default = NULL
-      )
-
-      names_select <- names[which(names %in% names(file))]
-
-      file <-
-        file %>%
-        dplyr::select(-any_of(.data$names_select))
+    if (none(class(file) %in% "data.frame") | default_view) {
+      standardView(file)
+      return(NULL)
     }
+
 
     requireNamespace("shiny", quietly = TRUE)
     requireNamespace("shinythemes", quietly = TRUE)
 
-    data.table::setDTthreads(6)
+    cores <- parallel::detectCores(logical = FALSE)
+
+    data.table::setDTthreads(cores)
 
     ui <- shiny::fluidPage(
-      theme = shinythemes::shinytheme("flatly"),
+      theme = shinythemes::shinytheme(theme),
       DT::DTOutput("mytable")
     )
 
@@ -96,28 +92,37 @@ View <- function(file,
         stopApp()
       })
     }
+
+
+
     shiny::shinyApp(ui, server)
-  } else if (any(class(file) %in% "environment")) {
-    tibble::view(file)
-  } else {
-    file_rows <- nrow(file)
-
-    if (file_rows <= 10000) {
-      row_limit <- file_rows
-    } else {
-      row_limit <- 10000
-    }
-
-    file <-
-      as.data.frame(file) %>%
-      dplyr::slice(1:row_limit)
-
-    file_name <- deparse(file)
-
-    file <-
-      file %>%
-      dplyr::select(-any_of("geometry"))
-
-    tibble::view(file)
   }
-}
+
+
+
+
+
+
+
+#     else {
+#     file_rows <- nrow(file)
+#
+#     if (file_rows <= 10000) {
+#       row_limit <- file_rows
+#     } else {
+#       row_limit <- 10000
+#     }
+#
+#     file <-
+#       as.data.frame(file) %>%
+#       dplyr::slice(1:row_limit)
+#
+#     file_name <- deparse(file)
+#
+#     file <-
+#       file %>%
+#       dplyr::select(-any_of("geometry"))
+#
+#     tibble::view(file)
+#   }
+# }
