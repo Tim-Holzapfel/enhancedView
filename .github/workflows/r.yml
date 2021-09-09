@@ -17,6 +17,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         r-version: [4.1.0]
