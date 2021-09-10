@@ -27,7 +27,6 @@ View <-
              "enhancedView.theme",
              default = "flatly"
            )) {
-
     `%notin%` <- Negate(`%in%`)
     none <- Negate(any)
 
@@ -69,6 +68,7 @@ View <-
       output$mytable <- DT::renderDT({
         DT::datatable(
           file,
+          style = "bootstrap",
           extensions = c("FixedHeader", "KeyTable"),
           options = list(
             deferRender = TRUE,
@@ -80,7 +80,7 @@ View <-
               )
             ),
             pageLength = pageLength_default,
-            lengthMenu = c(5, 20, 50, 100, 200, 1000),
+            lengthMenu = c(3, 5, 20, 50, 100, 200, 1000),
             fixedHeader = TRUE,
             autoWidth = TRUE,
             language = list(search = "Filter:")

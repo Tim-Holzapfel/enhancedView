@@ -1,28 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# enhancedView
+# enhancedView <img src="man/figures/logo.png" align="right" height="139"/>
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/Tim-Lukas-H/enhancedView/workflows/R-CMD-check/badge.svg)](https://github.com/Tim-Lukas-H/enhancedView/actions)
+
 <!-- badges: end -->
 
 The goal of enhancedView is to …
 
 ## Installation
 
-You can install the released version of enhancedView from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the most recent version of enhancedView from
+[GitHub](https://github.com/) with:
 
 ``` r
-install.packages("enhancedView")
-```
-
-And the development version from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("Tim-Lukas-H/enhancedView")
 ```
 
@@ -62,7 +57,72 @@ example workflow can be found here:
 
 You can also embed plots, for example:
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+# Themes
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+The following shows the available themes using the [Starswars
+data](https://dplyr.tidyverse.org/reference/starwars.html) of
+[dplyr](https://dplyr.tidyverse.org/index.html).
+
+### Cerulean Theme
+
+![flatly](./man/figures/cerulean_theme.png "Cerulean Theme")
+
+### Cosmo Theme
+
+![flatly](./man/figures/cosmo_theme.png "Cosmo Theme")
+
+### Cyborg Theme
+
+![flatly](./man/figures/cyborg_theme.png "Cyborg Theme")
+
+### Darkly Theme
+
+![flatly](./man/figures/darkly_theme.png "Darkly Theme")
+
+### Flatly Theme
+
+![flatly](./man/figures/flatly_theme.png "Flatly Theme")
+
+### Journal Theme
+
+![flatly](./man/figures/journal_theme.png "Journal Theme")
+
+### Lumen Theme
+
+![flatly](./man/figures/lumen_theme.png "Lumen Theme")
+
+### Paper Theme
+
+![flatly](./man/figures/paper_theme.png "Paper Theme")
+
+### Readable Theme
+
+![flatly](./man/figures/readable_theme.png "Readable Theme")
+
+### Sandstone Theme
+
+![flatly](./man/figures/sandstone_theme.png "Sandstone Theme")
+
+### Simplex Theme
+
+![flatly](./man/figures/Simplex_theme.png "Simplex Theme")
+
+### Slate Theme
+
+![flatly](./man/figures/slate_theme.png "Slate Theme")
+
+### Spacelab Theme
+
+![flatly](./man/figures/spacelab_theme.png "Spacelab Theme")
+
+### Superhero Theme
+
+![flatly](./man/figures/superhero_theme.png "Superhero Theme")
+
+### United Theme
+
+![flatly](./man/figures/united_theme.png "United Theme")
+
+### Yeti Theme
+
+![flatly](./man/figures/yeti_theme.png "Yeti Theme")

@@ -6,3 +6,6 @@
 ^README\.Rmd$
 ^\.github$
 ^.Rprofile$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
