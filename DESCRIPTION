@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "TimHolzapfel@outlook.com")
 Description: What the package does (one paragraph).
-License: MIT
+License: Apache License 2.0
 Encoding: UTF-8
 Language: en
 Roxygen: list(markdown = TRUE)
@@ -19,12 +19,11 @@ Depends:
     R (>= 4.0.0)
 Imports: 
     data.table,
-    dplyr,
     DT,
     parallel,
     shiny,
     shinythemes,
     withr,
+    magrittr,
     testthat,
-    rlang,
-    magrittr
+    dplyr

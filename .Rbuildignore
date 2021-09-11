@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^data_raw$
+^inst
 ^develop_part/.*$
 ^README\.Rmd$
 ^\.github$

@@ -9,29 +9,20 @@ if (interactive()) {
 
   invisible(desc::desc_del_deps())
 
-  deps <- renv::dependencies(path = c("R")) %>%
+  deps <- renv::dependencies(path = c("R/View.R")) %>%
     dplyr::transmute(
       package = Package,
       type = "Imports",
       version = "*"
     ) %>%
     tibble::add_row(
-      package = "testthat", type = "Imports", version = "*"
-    ) %>%
-    tibble::add_row(
-      package = "rlang", type = "Imports", version = "*"
-    ) %>%
-    tibble::add_row(
       package = "magrittr", type = "Imports", version = "*"
     ) %>%
     tibble::add_row(
-      package = "DT", type = "Imports", version = "*"
+      package = "testthat", type = "Imports", version = "*"
     ) %>%
     tibble::add_row(
-      package = "shiny", type = "Imports", version = "*"
-    ) %>%
-    tibble::add_row(
-      package = "shinythemes", type = "Imports", version = "*"
+      package = "dplyr", type = "Imports", version = "*"
     ) %>%
     tibble::add_row(
       package = "R", type = "Depends", version = ">= 4.0.0"

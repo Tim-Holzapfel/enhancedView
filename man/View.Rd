@@ -6,7 +6,7 @@
 \usage{
 View(
   file,
-  pageLength_default = getOption("enhancedView.pageLength", default = 200),
+  pageLength = getOption("enhancedView.pageLength", default = 200),
   default_view = getOption("enhancedView.default_view", default = FALSE),
   theme = getOption("enhancedView.theme", default = "flatly")
 )
@@ -14,11 +14,11 @@ View(
 \arguments{
 \item{file}{File to be viewed}
 
-\item{pageLength_default}{default page length.}
+\item{pageLength}{default page length.}
 
 \item{default_view}{Request the default RStudio data viewer.}
 
-\item{theme}{Drop variables that are not relevant in most situations}
+\item{theme}{Shinytheme to use. Possible values are "cerulean", "cosmo", "cyborg", "darkly", "flatly", "journal", "lumen", "paper", "readable", "sandstone", "simplex", "slate", "spacelab", "superhero", "united" or "yeti". The default is "flatly".}
 }
 \description{
 One of the biggest problems of the built-in data viewer is its

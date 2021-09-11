@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/Tim-Lukas-H/enhancedView/workflows/R-CMD-check/badge.svg)](https://github.com/Tim-Lukas-H/enhancedView/actions)
+[![R-CMD-check](https://github.com/Tim-Lukas-H/enhancedView/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Tim-Lukas-H/enhancedView/actions/workflows/R-CMD-check.yaml)
 
 <!-- badges: end -->
 
@@ -56,6 +56,19 @@ example workflow can be found here:
 <https://github.com/r-lib/actions/tree/master/examples>.
 
 You can also embed plots, for example:
+
+    #> 
+    #> Attaching package: 'dplyr'
+    #> The following objects are masked from 'package:stats':
+    #> 
+    #>     filter, lag
+    #> The following objects are masked from 'package:base':
+    #> 
+    #>     intersect, setdiff, setequal, union
+    #> 
+    #> Listening on http://127.0.0.1:8012
+
+<img src="man/figuresunnamed-chunk-2-1.png" width="100%" />
 
 # Themes
 
