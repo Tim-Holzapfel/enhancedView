@@ -9,7 +9,7 @@
 
 <!-- badges: end -->
 
-This package is basically a “off the shelf” version of the
+This package is basically a simple “off the shelf” version of the
 [DT](https://rstudio.github.io/DT/) by Yihui. It replaces the default
 data viewer function *View* with a Shiny App.
 
