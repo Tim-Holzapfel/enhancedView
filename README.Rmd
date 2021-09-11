@@ -1,6 +1,7 @@
 ---
-output: html_document
-runtime: shiny
+output: 
+  github_document:
+    toc: false
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -23,7 +24,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of enhancedView is to ...
+This package is basically a simple "off the shelf" version of the [DT](https://rstudio.github.io/DT/) by Yihui. It replaces the default data viewer function *View* with a Shiny App.
 
 ## Installation
 
@@ -34,41 +35,6 @@ install.packages("devtools")
 devtools::install_github("Tim-Lukas-H/enhancedView")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(enhancedView)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-```{r, echo = FALSE}
-library(shiny)
-options("enhancedView.theme" = "flatly")
-project_root <- rprojroot::find_root(rprojroot::as_root_criterion(".RProfile"))
-r_root <- file.path(project_root, "data_raw")
-shinyAppDir(
-  r_root,
-  options = list(width = "100%", height = 700)
-)
-```
-
 # Themes
 
 The following shows the available themes using the
@@ -76,64 +42,64 @@ The following shows the available themes using the
 
 ### Cerulean Theme
 
-![flatly](./man/figures/cerulean_theme.png "Cerulean Theme")
+![Cerulean](./man/figures/cerulean_theme.png "Cerulean Theme")
 
 ### Cosmo Theme
 
-![flatly](./man/figures/cosmo_theme.png "Cosmo Theme")
+![Cosmo](./man/figures/cosmo_theme.png "Cosmo Theme")
 
 ### Cyborg Theme
 
-![flatly](./man/figures/cyborg_theme.png "Cyborg Theme")
+![Cyborg](./man/figures/cyborg_theme.png "Cyborg Theme")
 
 ### Darkly Theme
 
-![flatly](./man/figures/darkly_theme.png "Darkly Theme")
+![Darkly](./man/figures/darkly_theme.png "Darkly Theme")
 
 ### Flatly Theme
 
-![flatly](./man/figures/flatly_theme.png "Flatly Theme")
+![Flatly](./man/figures/flatly_theme.png "Flatly Theme")
 
 ### Journal Theme
 
-![flatly](./man/figures/journal_theme.png "Journal Theme")
+![Journal](./man/figures/journal_theme.png "Journal Theme")
 
 ### Lumen Theme
 
-![flatly](./man/figures/lumen_theme.png "Lumen Theme")
+![Lumen](./man/figures/lumen_theme.png "Lumen Theme")
 
 ### Paper Theme
 
-![flatly](./man/figures/paper_theme.png "Paper Theme")
+![Paper](./man/figures/paper_theme.png "Paper Theme")
 
 ### Readable Theme
 
-![flatly](./man/figures/readable_theme.png "Readable Theme")
+![Readable](./man/figures/readable_theme.png "Readable Theme")
 
 ### Sandstone Theme
 
-![flatly](./man/figures/sandstone_theme.png "Sandstone Theme")
+![Sandstone](./man/figures/sandstone_theme.png "Sandstone Theme")
 
 ### Simplex Theme
 
-![flatly](./man/figures/Simplex_theme.png "Simplex Theme")
+![Simplex](./man/figures/Simplex_theme.png "Simplex Theme")
 
 ### Slate Theme
 
-![flatly](./man/figures/slate_theme.png "Slate Theme")
+![Slate](./man/figures/slate_theme.png "Slate Theme")
 
 ### Spacelab Theme
 
-![flatly](./man/figures/spacelab_theme.png "Spacelab Theme")
+![Spacelab](./man/figures/spacelab_theme.png "Spacelab Theme")
 
 ### Superhero Theme
 
-![flatly](./man/figures/superhero_theme.png "Superhero Theme")
+![Superhero](./man/figures/superhero_theme.png "Superhero Theme")
 
 ### United Theme
 
-![flatly](./man/figures/united_theme.png "United Theme")
+![United](./man/figures/united_theme.png "United Theme")
 
 ### Yeti Theme
 
-![flatly](./man/figures/yeti_theme.png "Yeti Theme")
+![Yeti](./man/figures/yeti_theme.png "Yeti Theme")
