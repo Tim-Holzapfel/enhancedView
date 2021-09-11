@@ -31,11 +31,6 @@ data](https://dplyr.tidyverse.org/reference/starwars.html) of
 
 ### Cerulean Theme
 
-``` r
-library(knitr)
-include_graphics(fig_fun("cerulean_theme.png"))
-```
-
 <img src="D:/enhancedView/man/figures/cerulean_theme.png" width="100%" />
 
 ### Cosmo Theme

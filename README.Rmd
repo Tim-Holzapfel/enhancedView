@@ -13,21 +13,12 @@ fig_dir <- file.path(project_root, "man/figures")
 fig_fun <- function(input_png) {
   file.path(fig_dir, input_png)
 }
-
-library(knitr)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   out.width = "100%",
-  tidy = "styler",
-  root.dir = file.path(project_root, "man/figures/"),
-  fig.path = file.path(project_root, "man/figures/")
+  tidy = "styler"
 )
-knitr::opts_knit$set(
-  root.dir = file.path(project_root, "man/figures/"),
-  fig.path = file.path(project_root, "man/figures/")
-  )
-print(getwd())
 ```
 
 # enhancedView <img src="man/figures/logo.png" align="right" height="139"/>
@@ -56,9 +47,8 @@ The following shows the available themes using the
 
 ### Cerulean Theme
 
-```{r}
-library(knitr)
-include_graphics(fig_fun("cerulean_theme.png"))
+```{r cerulean_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("cerulean_theme.png"))
 ```
 
 ### Cosmo Theme
@@ -143,7 +133,7 @@ knitr::include_graphics(fig_fun("superhero_theme.png"))
 ### United Theme
 
 ```{r united_theme, echo=FALSE}
-include_graphics(fig_fun("united_theme.png"))
+knitr::include_graphics(fig_fun("united_theme.png"))
 ```
 
 ### Yeti Theme
