@@ -31,64 +31,69 @@ data](https://dplyr.tidyverse.org/reference/starwars.html) of
 
 ### Cerulean Theme
 
-![Cerulean](./man/figures/cerulean_theme.png "Cerulean Theme")
+``` r
+library(knitr)
+include_graphics(fig_fun("cerulean_theme.png"))
+```
+
+<img src="D:/enhancedView/man/figures/cerulean_theme.png" width="100%" />
 
 ### Cosmo Theme
 
-![Cosmo](./man/figures/cosmo_theme.png "Cosmo Theme")
+<img src="D:/enhancedView/man/figures/cosmo_theme.png" width="100%" />
 
 ### Cyborg Theme
 
-![Cyborg](./man/figures/cyborg_theme.png "Cyborg Theme")
+<img src="D:/enhancedView/man/figures/cyborg_theme.png" width="100%" />
 
 ### Darkly Theme
 
-![Darkly](./man/figures/darkly_theme.png "Darkly Theme")
+<img src="D:/enhancedView/man/figures/darkly_theme.png" width="100%" />
 
 ### Flatly Theme
 
-![Flatly](./man/figures/flatly_theme.png "Flatly Theme")
+<img src="D:/enhancedView/man/figures/flatly_theme.png" width="100%" />
 
 ### Journal Theme
 
-![Journal](./man/figures/journal_theme.png "Journal Theme")
+<img src="D:/enhancedView/man/figures/journal_theme.png" width="100%" />
 
 ### Lumen Theme
 
-![Lumen](./man/figures/lumen_theme.png "Lumen Theme")
+<img src="D:/enhancedView/man/figures/lumen_theme.png" width="100%" />
 
 ### Paper Theme
 
-![Paper](./man/figures/paper_theme.png "Paper Theme")
+<img src="D:/enhancedView/man/figures/paper_theme.png" width="100%" />
 
 ### Readable Theme
 
-![Readable](./man/figures/readable_theme.png "Readable Theme")
+<img src="D:/enhancedView/man/figures/readable_theme.png" width="100%" />
 
 ### Sandstone Theme
 
-![Sandstone](./man/figures/sandstone_theme.png "Sandstone Theme")
+<img src="D:/enhancedView/man/figures/sandstone_theme.png" width="100%" />
 
 ### Simplex Theme
 
-![Simplex](./man/figures/Simplex_theme.png "Simplex Theme")
+<img src="D:/enhancedView/man/figures/simplex_theme.png" width="100%" />
 
 ### Slate Theme
 
-![Slate](./man/figures/slate_theme.png "Slate Theme")
+<img src="D:/enhancedView/man/figures/slate_theme.png" width="100%" />
 
 ### Spacelab Theme
 
-![Spacelab](./man/figures/spacelab_theme.png "Spacelab Theme")
+<img src="D:/enhancedView/man/figures/spacelab_theme.png" width="100%" />
 
 ### Superhero Theme
 
-![Superhero](./man/figures/superhero_theme.png "Superhero Theme")
+<img src="D:/enhancedView/man/figures/superhero_theme.png" width="100%" />
 
 ### United Theme
 
-![United](./man/figures/united_theme.png "United Theme")
+<img src="D:/enhancedView/man/figures/united_theme.png" width="100%" />
 
 ### Yeti Theme
 
-![Yeti](./man/figures/yeti_theme.png "Yeti Theme")
+<img src="D:/enhancedView/man/figures/yeti_theme.png" width="100%" />

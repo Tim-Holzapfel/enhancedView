@@ -6,14 +6,28 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
+project_root <- rprojroot::find_root(rprojroot::as_root_criterion(".RProfile"))
+fig_dir <- file.path(project_root, "man/figures")
+
+fig_fun <- function(input_png) {
+  file.path(fig_dir, input_png)
+}
+
+library(knitr)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures",
   out.width = "100%",
-  tidy = "styler"
+  tidy = "styler",
+  root.dir = file.path(project_root, "man/figures/"),
+  fig.path = file.path(project_root, "man/figures/")
 )
+knitr::opts_knit$set(
+  root.dir = file.path(project_root, "man/figures/"),
+  fig.path = file.path(project_root, "man/figures/")
+  )
+print(getwd())
 ```
 
 # enhancedView <img src="man/figures/logo.png" align="right" height="139"/>
@@ -42,64 +56,98 @@ The following shows the available themes using the
 
 ### Cerulean Theme
 
-![Cerulean](./man/figures/cerulean_theme.png "Cerulean Theme")
+```{r}
+library(knitr)
+include_graphics(fig_fun("cerulean_theme.png"))
+```
 
 ### Cosmo Theme
 
-![Cosmo](./man/figures/cosmo_theme.png "Cosmo Theme")
+```{r cosmo_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("cosmo_theme.png"))
+```
+
 
 ### Cyborg Theme
 
-![Cyborg](./man/figures/cyborg_theme.png "Cyborg Theme")
+```{r cyborg_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("cyborg_theme.png"))
+```
 
 ### Darkly Theme
 
-![Darkly](./man/figures/darkly_theme.png "Darkly Theme")
+```{r darkly_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("darkly_theme.png"))
+```
 
 ### Flatly Theme
 
-![Flatly](./man/figures/flatly_theme.png "Flatly Theme")
+```{r flatly_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("flatly_theme.png"))
+```
 
 ### Journal Theme
 
-![Journal](./man/figures/journal_theme.png "Journal Theme")
+```{r journal_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("journal_theme.png"))
+```
 
 ### Lumen Theme
 
-![Lumen](./man/figures/lumen_theme.png "Lumen Theme")
+```{r lumen_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("lumen_theme.png"))
+```
 
 ### Paper Theme
 
-![Paper](./man/figures/paper_theme.png "Paper Theme")
+```{r paper_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("paper_theme.png"))
+```
 
 ### Readable Theme
 
-![Readable](./man/figures/readable_theme.png "Readable Theme")
+```{r readable_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("readable_theme.png"))
+```
 
 ### Sandstone Theme
 
-![Sandstone](./man/figures/sandstone_theme.png "Sandstone Theme")
+```{r sandstone_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("sandstone_theme.png"))
+```
 
 ### Simplex Theme
 
-![Simplex](./man/figures/Simplex_theme.png "Simplex Theme")
+```{r simplex_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("simplex_theme.png"))
+```
 
 ### Slate Theme
 
-![Slate](./man/figures/slate_theme.png "Slate Theme")
+```{r slate_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("slate_theme.png"))
+```
 
 ### Spacelab Theme
 
-![Spacelab](./man/figures/spacelab_theme.png "Spacelab Theme")
+```{r spacelab_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("spacelab_theme.png"))
+```
 
 ### Superhero Theme
 
-![Superhero](./man/figures/superhero_theme.png "Superhero Theme")
+```{r superhero_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("superhero_theme.png"))
+```
 
 ### United Theme
 
-![United](./man/figures/united_theme.png "United Theme")
+```{r united_theme, echo=FALSE}
+include_graphics(fig_fun("united_theme.png"))
+```
 
 ### Yeti Theme
 
-![Yeti](./man/figures/yeti_theme.png "Yeti Theme")
+```{r yeti_theme, echo=FALSE}
+knitr::include_graphics(fig_fun("yeti_theme.png"))
+```

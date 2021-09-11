@@ -6,6 +6,5 @@ R/gen_package_logo.R
 inst/
 develop_part/
 data_raw/
-docs
 _pkgdown.yml
 pkgdown

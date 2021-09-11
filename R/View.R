@@ -2,16 +2,23 @@
 #'
 #' @description One of the biggest problems of the built-in data viewer is its
 #'   limited capability to expand the columns.
-#'
+#
+#' @import shiny
+#' @importFrom dplyr any_of
+#' @importFrom shinythemes shinytheme
+#
 #' @param file File to be viewed
 #' @param theme Shinytheme to use. Possible values are "cerulean", "cosmo", "cyborg", "darkly", "flatly", "journal", "lumen", "paper", "readable", "sandstone", "simplex", "slate", "spacelab", "superhero", "united" or "yeti". The default is "flatly".
 #' @param pageLength default page length.
 #' @param default_view Request the default RStudio data viewer.
 #' @export
 #'
-#' @import shiny
-#' @importFrom dplyr any_of
-#' @importFrom shinythemes shinytheme
+#' @examples
+#' \dontrun{
+#' starwars <- dplyr::starwars
+#' View(starwars)
+#' }
+#'
 View <-
   function(file,
            pageLength = getOption(
